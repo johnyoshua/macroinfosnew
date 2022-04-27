@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-    li{
-      @apply p-4
-    }
-  
-    button {
-      @apply text-white border  hover:bg-transparent hover:text-indigo-600 rounded-md
-    }
+  li {
+    @apply p-4;
   }
+
+  button {
+    @apply text-white border  hover:bg-transparent hover:text-indigo-600 rounded-md;
+  }
+}
+
+.container {
+  padding-top: 100px;
+}

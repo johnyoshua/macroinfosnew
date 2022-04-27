@@ -1,10 +1,7 @@
-import './App.css';
-import Accueil from './Accueil'
-import Formation from './Formation'
-import Boutique from './Boutique'
-import Contact from './Contact'
-import Navbar from './components/standard/Navbar';
-import Footer from './components/standard/Footer';
+import "./App.css";
+import { Accueil, Boutique, Contact, Formation } from "./pages";
+import Navbar from "./components/standard/Navbar";
+import Footer from "./components/standard/Footer";
 
 import {
   BrowserRouter as Router,
@@ -12,16 +9,21 @@ import {
   Route,
   Link,
   useRouteMatch,
-  useParams
+  useParams,
 } from "react-router-dom";
-
-
+import { useEffect } from "react";
 
 function App() {
-  return (<div className='mt-0'>
-        <Router>
+  useEffect(() => {
+    console.log("render");
+  });
+  return (
+    <Router>
       <Navbar />
       <Switch>
+        <Route exact path="/">
+          <Accueil />
+        </Route>
         <Route exact path="/boutique">
           <Boutique />
         </Route>
@@ -31,15 +33,9 @@ function App() {
         <Route exact path="/contact">
           <Contact />
         </Route>
-        <Route exact path="/">
-          <Accueil />
-        </Route>
       </Switch>
       <Footer />
-  </Router>
-  </div>
-    
-
+    </Router>
   );
 }
 
