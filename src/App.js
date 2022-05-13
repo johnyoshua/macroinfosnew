@@ -1,14 +1,17 @@
 import "./App.css";
-import "./components/css/App.css"
-import { Accueil, Boutique, Contact, Formation, DetailAbout, ProduitDetail } from "./pages";
+import "./components/css/App.css";
+import {
+  Accueil,
+  Boutique,
+  Contact,
+  Formation,
+  DetailAbout,
+  ProduitDetail,
+} from "./pages";
 import Navbar from "./components/standard/Navbar";
 import Footer from "./components/standard/Footer";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -22,12 +25,12 @@ function App() {
           <Boutique />
         </Route>
         <Route exact path="/formations">
-          <Formation  />
+          <Formation />
         </Route>
         <Route exact path="/about">
           <DetailAbout />
         </Route>
-        <Route exact path="/boutique/detail/:id">
+        <Route path="/boutique/detail/:id">
           <ProduitDetail />
         </Route>
         <Route exact path="/contact">
